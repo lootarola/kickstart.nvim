@@ -326,14 +326,14 @@ require('lazy').setup({
 
       -- Document existing key chains require('which-key').add {
       require('which-key').add {
-        { '<leader>d', name = '[D]ocument' },
-        { '<leader>r', name = '[R]ename' },
-        { '<leader>s', name = '[S]earch' },
-        { '<leader>w', name = '[W]orkspace' },
-        { '<leader>t', name = '[T]oggle' },
-        { '<leader>h', name = 'Git [H]unk' },
-        { '<leader>p', name = 'Co[P]ilot' },
-        { '<leader>g', name = '[G]o' },
+        { '<leader>d', name = '[D]ocument', icon = '󰈙' },
+        { '<leader>r', name = '[R]ename', icon = '󰑕' },
+        { '<leader>s', name = '[S]earch', icon = '' },
+        { '<leader>w', name = '[W]orkspace', icon = '󱄄' },
+        { '<leader>t', name = '[T]oggle', icon = '󰨚' },
+        { '<leader>h', name = 'Git [H]unk', icon = '' },
+        { '<leader>p', name = 'Co[P]ilot', icon = '' },
+        { '<leader>g', name = '[G]o', icon = '' },
       }
       -- visual mode
       require('which-key').add({
