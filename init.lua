@@ -230,7 +230,7 @@ require('lazy').setup({
   'github/copilot.vim',
   {
     'CopilotC-Nvim/CopilotChat.nvim',
-    branch = 'canary',
+    branch = 'main',
     dependencies = {
       { 'github/copilot.vim' },
       { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper
@@ -324,22 +324,21 @@ require('lazy').setup({
     config = function() -- This is the function that runs, AFTER loading
       require('which-key').setup()
 
-      -- Document existing key chains
-      require('which-key').register {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
-        ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
-        ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
-        ['<leader>p'] = { name = 'Co[P]ilot', _ = 'which_key_ignore' },
-        ['<leader>g'] = { name = '[G]o', _ = 'which_key_ignore' },
+      -- Document existing key chains require('which-key').add {
+      require('which-key').add {
+        { '<leader>d', name = '[D]ocument' },
+        { '<leader>r', name = '[R]ename' },
+        { '<leader>s', name = '[S]earch' },
+        { '<leader>w', name = '[W]orkspace' },
+        { '<leader>t', name = '[T]oggle' },
+        { '<leader>h', name = 'Git [H]unk' },
+        { '<leader>p', name = 'Co[P]ilot' },
+        { '<leader>g', name = '[G]o' },
       }
       -- visual mode
-      require('which-key').register({
-        ['<leader>h'] = { 'Git [H]unk' },
-        ['<leader>p'] = { 'Co[P]ilot' },
+      require('which-key').add({
+        { '<leader>h', 'Git [H]unk' },
+        { '<leader>p', 'Co[P]ilot' },
       }, { mode = 'v' })
     end,
   },
@@ -431,7 +430,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
-      -- Slightly advanced example of overriding default behavior and theme
+      -- Slightly advanced expmple of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -677,7 +676,7 @@ require('lazy').setup({
         gopls = {},
         pyright = {},
         rust_analyzer = {},
-        java_language_server = {},
+        -- java_language_server = {},
         docker_compose_language_service = {},
         dockerls = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -686,7 +685,7 @@ require('lazy').setup({
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        tsserver = {},
+        -- tsserver = {},
         --
 
         lua_ls = {
