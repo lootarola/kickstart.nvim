@@ -337,8 +337,8 @@ require('lazy').setup({
       }
       -- visual mode
       require('which-key').add({
-        { '<leader>h', 'Git [H]unk' },
-        { '<leader>p', 'Co[P]ilot' },
+        { '<leader>h', 'Git [H]unk', icon = '' },
+        { '<leader>p', 'Co[P]ilot', icon = '' },
       }, { mode = 'v' })
     end,
   },
